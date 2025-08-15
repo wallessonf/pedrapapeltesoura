@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jogo interativo de Pedra, Papel e Tesoura contra o computador">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <title>Jogo Pedra, Papel e Tesoura</title>
+</head>
+<body>
+  
+
+    <header class="cabecalho-jogo">
+      <h1>Jogo Pedra, Papel e Tesoura</h1>
+      <p class="subtitulo">Escolha sua jogada e desafie o computador!</p>
+    </header>
+
+<main class="container-jogo">
+    <section class="opcoes-jogo">
+      <h2 class="apenas-leitura">Escolha sua jogada</h2>
+      <div class="container-opcoes">
+        <button class="botao-opcao" data-choice="pedra" aria-label="Escolher Pedra">
+          <span class="emoji-opcao">🗿</span>
+          <span class="nome-opcao">Pedra</span>
+        </button>
+        <button class="botao-opcao" data-choice="papel" aria-label="Escolher Papel">
+          <span class="emoji-opcao">📄</span>
+          <span class="nome-opcao">Papel</span>
+        </button>
+        <button class="botao-opcao" data-choice="tesoura" aria-label="Escolher Tesoura">
+          <span class="emoji-opcao">✂️</span>
+          <span class="nome-opcao">Tesoura</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="area-batalha">
+      <h2>Resultado da Jogada</h2>
+      <div class="display-batalha">
+        <div class="escolha-jogador">
+          <h3>Você</h3>
+          <div class="display-escolha" id="display-jogador">
+            <span class="emoji-opcao">❓</span>
+            <span class="nome-opcao">Escolha</span>
+          </div>
+        </div>
+        
+        <div class="indicador-vs">VS</div>
+        
+        <div class="escolha-computador">
+          <h3>Computador</h3>
+          <div class="display-escolha" id="display-computador">
+            <span class="emoji-opcao">❓</span>
+            <span class="nome-opcao">Esperando...</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="resultado-rodada">
+        <p class="mensagem-resultado" id="mensagem-resultado">Faça sua escolha para começar!</p>
+        <div class="status-resultado" id="status-resultado"></div>
+      </div>
+    </section>
+
+    <section class="placar">
+      <h2>Placar</h2>
+      <div class="display-pontuacao">
+        <div class="item-pontuacao">
+          <span class="label-pontuacao">Jogador</span>
+          <span class="valor-pontuacao" id="pontuacao-jogador">0</span>
+        </div>
+        <div class="divisor-pontuacao">-</div>
+        <div class="item-pontuacao">
+          <span class="label-pontuacao">Computador</span>
+          <span class="valor-pontuacao" id="pontuacao-computador">0</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="historico-jogo">
+      <h2>Histórico das Jogadas</h2>
+      <div class="container-historico" id="container-historico">
+        <p class="historico-vazio">Nenhuma jogada ainda. Comece o jogo!</p>
+      </div>
+      <button class="limpar-historico" id="limpar-historico" style="display: none;">
+        Limpar Histórico
+      </button>
+    </section>
+
+    <section class="controles-jogo">
+      <button class="botao-reiniciar" id="reiniciar-jogo">
+        Reiniciar Jogo
+      </button>
+    </section>
+  </main>
+
+  <script src="jogo.js"></script>
+
+</body>
+</html>
